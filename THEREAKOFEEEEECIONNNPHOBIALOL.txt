@@ -1,0 +1,21 @@
+local M=Instance.new("Model")
+M.Name="Offecionphobia"
+local P=Instance.new("Part",M) P.Name="Main" P.Anchored=true P.Transparency=1
+local A=Instance.new("Attachment",P) A.Name="rout"
+local Face=Instance.new("ParticleEmitter",A)
+Face.Name="Face"
+Face.Texture="rbxassetid://83868586334074"
+local L=Instance.new("PointLight",A)
+L.Color=Color3.fromRGB(0,0,255)
+L.Brightness=10
+L.Range=20
+local F=Instance.new("Folder",M) F.Name="SoundsFe"
+local S=Instance.new("Sound",F) S.Name="Spawn" S.SoundId="rbxassetid://6629890936" S.Pitch=0.1
+local D=Instance.new("DistortionSoundEffect",S) D.Level=1
+local Far=Instance.new("Sound",F)
+Far.Name="Far" Far.SoundId="rbxassetid://8389041427" Far.Pitch=0.1 Far.Looped=true
+local PSE=Instance.new("PitchShiftSoundEffect",Far) PSE.Octave=0.3
+local DD=Instance.new("DistortionSoundEffect",Far) DD.Level=1
+local Close=Far:Clone() Close.Name="Close" Close.Parent=F
+M.PrimaryPart=P
+return M
